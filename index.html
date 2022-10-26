@@ -4,9 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>iLearn Academy</title>
+    <script src="https://unpkg.com/vue@2.7.8/dist/vue.js"></script>   
 </head>
 <body>
-    
+    <div id="app">
+        <header>
+            <h1 v-text="iLearn Academy"></h1>
+        </header>
+        <main>
+            <!---->
+            <figure>
+            <!-- bind the 'src' attribute to the 'product.image' in 'data' -->
+            <img v-bind:src="lesson.image" class="smallimage">
+            </figure>
+            <h2 v-text="lesson.subject"></h2>
+            <p v-text="lesson.location"></p>
+            <p v-text="lesson.price"></p>
+            <p v-text="lesson.space"></p>
+            <!-- The double curly brackets is the shorter version of 'v-text' -->
+            <p>Price: {{product.price}}</p>
+           
+            <button v-if="canAddtoCart" v-on:click="add(product[0])"> Add To Cart</button>
+            <button disabled v-else> Add To Cart</button>                       
+        </main>
 </body>
 </html>
