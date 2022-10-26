@@ -18,17 +18,17 @@
             <!-- bind the 'src' attribute to the 'product.image' in 'data' -->
             <img v-bind:src="lesson.image" class="smallimage">
             </figure>
-            <h2 v-text="lesson.subject"></h2>
-            <p v-text="lesson.location"></p>
-            <p v-text="lesson.price"></p>
-            <p v-text="lesson.space"></p>
+            <h2 v-text="lesson[0].subject"></h2>
+            <p v-text="lesson[0].location"></p>
+            <p v-text="lesson[0].price"></p>
+            <p v-text="lesson[0].space"></p>
             <!-- The double curly brackets is the shorter version of 'v-text' -->
-            <p>Price: {{product.price}}</p>
+            <p>Price: {{lesson[0].price}}</p>
            
-            <button v-if="canAddtoCart" v-on:click="add(product[0])"> Add To Cart</button>
+            <button v-if="canAddtoCart" v-on:click="add(lesson[0])"> Add To Cart</button>
             <button disabled v-else> Add To Cart</button>                       
         </main>
 </body>
-<script type="text/javascript" src="./lesson.js"></script>
+<script type="text/javascript" src="./lessons.js"></script>
 <script type="text/javascript" src="./vue.js"></script>
 </html>
