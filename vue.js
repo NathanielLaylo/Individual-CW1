@@ -5,7 +5,7 @@ var webstore = new Vue({
         sitename: 'iLearn Academy',
         showLesson: true,
         lesson: lessons,
-        cart: []
+        cart: [],
     },
     methods: {
         add: function (selectedLesson) {
@@ -18,8 +18,16 @@ var webstore = new Vue({
                 selectedLesson.space = x;
             }            
         },
-        toggleShowProduct() {
+        toggleShowCart() {
             this.showLesson = this.showLesson ? false : true;
+        }
+    },
+    computed: {
+        totalItemsCart: function () {
+            return this.cart.length || "";
+        },
+        canAddtoCart() {
+            return this.product.space > 0;
         }
     }
 });
