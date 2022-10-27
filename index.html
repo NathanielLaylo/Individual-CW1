@@ -6,6 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iLearn Academy</title>
     <script src="https://unpkg.com/vue@2.7.8/dist/vue.js"></script>   
+
+    <style>
+        img {
+            width: 100px; 
+            height: 100px;
+        }
+
+    </style>
 </head>
 <body>
     <div id="app">
@@ -16,7 +24,7 @@
             <!---->
             <figure>
             <!-- bind the 'src' attribute to the 'product.image' in 'data' -->
-            <img v-bind:src="lesson.image" class="smallimage">
+            <img v-bind:src="lesson[0].image" class="smallimage">
             </figure>
             <h2 v-text="lesson[0].subject"></h2>
             <p v-text="lesson[0].location"></p>
@@ -26,7 +34,26 @@
             <p>Price: {{lesson[0].price}}</p>
            
             <button v-if="canAddtoCart" v-on:click="add(lesson[0])"> Add To Cart</button>
-            <button disabled v-else> Add To Cart</button>                       
+            <button disabled v-else> Add To Cart</button>   
+            
+            
+            <div v-for="lesson in lesson">
+                <div class="row">
+                    <div>
+                        <figure>
+                            <img v-bind:src="lesson.image">
+                        </figure>
+                    </div>
+                    <div>
+                        <h2 v-text="lesson.subject"></h2>
+                        <p v-text="lesson.location"></p>
+                        <p v-text="lesson.price"></p>
+                        <p v-text="lesson.space"></p>
+                        <button v-on:click=""> Add To Cart</button>
+                    </div>
+                </div><!-- end of row-->
+                <hr />
+            </div><!-- end of v-for-->
         </main>
 </body>
 <script type="text/javascript" src="./lessons.js"></script>
