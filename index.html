@@ -20,23 +20,9 @@
         <header>
             <h1 v-text="sitename"></h1>
         </header>
-        <main>
-            <!---->
-            <figure>
-            <!-- bind the 'src' attribute to the 'product.image' in 'data' -->
-            <img v-bind:src="lesson[0].image" class="smallimage">
-            </figure>
-            <h2 v-text="lesson[0].subject"></h2>
-            <p v-text="lesson[0].location"></p>
-            <p v-text="lesson[0].price"></p>
-            <p v-text="lesson[0].space"></p>
-            <!-- The double curly brackets is the shorter version of 'v-text' -->
-            <p>Price: {{lesson[0].price}}</p>
-           
+        <main>           
             <button v-if="canAddtoCart" v-on:click="add(lesson[0])"> Add To Cart</button>
-            <button disabled v-else> Add To Cart</button>   
-            
-            
+            <button disabled v-else> Add To Cart</button>                      
             <div v-for="lesson in lesson">
                 <div class="row">
                     <div>
@@ -45,10 +31,10 @@
                         </figure>
                     </div>
                     <div>
-                        <h2 v-text="lesson.subject"></h2>
-                        <p v-text="lesson.location"></p>
-                        <p v-text="lesson.price"></p>
-                        <p v-text="lesson.space"></p>
+                        <p>Subject: {{lesson.subject}}</p>
+                        <p>Location: {{lesson.location}}</p>
+                        <p>Price: {{lesson.price}}</p>
+                        <p>Space: {{lesson.space}}</p>
                         <button v-on:click=""> Add To Cart</button>
                     </div>
                 </div><!-- end of row-->
