@@ -18,6 +18,20 @@ var webstore = new Vue({
                 selectedLesson.space = x;
             }            
         },
+        remove: function (selectedLesson) {
+            const index = this.cart.indexOf(selectedLesson);
+            if (index > -1) { 
+                this.cart.splice(index, 1);
+            }
+            var lessonLength = this.lesson.length;
+            for (var i = 0; i < lessonLength; i++){
+                if (this.lesson[i].id == selectedLesson.id){
+                    this.lesson[i].space++;
+                }
+                
+            }
+
+        },
         toggleShowCart() {
             this.showLesson = this.showLesson ? false : true;
         }
