@@ -6,6 +6,7 @@ var webstore = new Vue({
         showLesson: true,
         lesson: lessons,
         cart: [],
+        sortedLesson: []
     },
     methods: {
         add: function (selectedLesson) {
@@ -34,14 +35,28 @@ var webstore = new Vue({
         },
         toggleShowCart() {
             this.showLesson = this.showLesson ? false : true;
-        }
+        },
+        canAddtoCart(selectedLesson){
+            return selectedLesson.space > 0;
+        },
+        myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+          }
+        
     },
     computed: {
         totalItemsCart: function () {
             return this.cart.length || "";
         },
-        canAddtoCart() {
-            return this.product.space > 0;
+
+        sortLesson(){
+            sortedLesson = lessons;
+            function compare(a, b){
+                if (a.space > b.space) return 1;
+                if (a.space < b.space) return -1;
+                return 0;
+            }
+            return sortedLesson.sort(compare);
         }
     }
 });

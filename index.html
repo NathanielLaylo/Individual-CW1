@@ -7,6 +7,8 @@
     <title>iLearn Academy</title>
     <script src="https://unpkg.com/vue@2.7.8/dist/vue.js"></script>   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script src="https://use.fontawesome.com/86e0cb0b96.js"></script>
+
 
 
     <style>
@@ -26,6 +28,8 @@
                 {{totalItemsCart}}
                 <span class= "fas fa-cart-plus"></span> Checkout
             </button>
+            
+              
         </header>
         <div v-if="showLesson">
             <main>                             
@@ -41,7 +45,13 @@
                             <p>Location: {{lesson.location}}</p>
                             <p>Price: {{lesson.price}}</p>
                             <p>Space: {{lesson.space}}</p>
-                            <button v-on:click="add(lesson)"> Add To Cart</button>
+                            <button v-on:click="add(lesson)" v-if="canAddtoCart(lesson)"> Add To Cart</button>
+                            <button disabled v-else> Add To Cart </button>
+                            <div>
+                                <span class="fa fa-star" v-for='n in lesson.rating'></span>
+                                <span class="fa fa-star-o" v-for='n in 5 - lesson.rating'></span>
+                            </div>
+
     
                         </div>
                     </div><!-- end of row-->
