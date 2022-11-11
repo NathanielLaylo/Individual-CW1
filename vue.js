@@ -6,7 +6,8 @@ var webstore = new Vue({
         showLesson: true,
         lesson: lessons,
         cart: [],
-        sortOrder: 0
+        sortOrder: 0,
+        enableCheckoutButton: false
     },
     methods: {
         add: function (selectedLesson) {
@@ -129,9 +130,28 @@ var webstore = new Vue({
                     break;                    
             }
            
+        },
+        checkName() {
+            let userName = document.forms["checkoutForm"]["userName"].value;
+            return /^[a-zA-Z]+$/.test(userName);
+        },
+        checkNumber() {
+            let userNumber = document.forms["checkoutForm"]["userNumber"].value;           
+            return /^[1-9]+$/.test(userNumber);           
+        },
+        enableCheckButton(){
+            if((this.checkNumber()) && (this.checkName())){
+                this.enableCheckoutButton = true;
+            } else {
+                this.enableCheckoutButton = false;
+            }
+            
+        },
+        submitCheckout(){
+            let userName = document.forms["checkoutForm"]["userName"].value;
+            document.getElementById('checkFeedback').innerHTML = "Thank you, " + userName + "! Your order has been submitted.";
+            alert("Thank you, " + userName + "! Your order has been submitted.");
         }
-          
-        
     },
     computed: {
         totalItemsCart: function () {
@@ -139,9 +159,7 @@ var webstore = new Vue({
         },
         enableCart(){
             return this.cart.length > 0;
-        }
-        
-        
+        },   
     }
 });
 

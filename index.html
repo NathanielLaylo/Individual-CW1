@@ -24,7 +24,7 @@
     <div id="app">
         <header>
             <h1 v-text="sitename"></h1>
-            <button v-if='enableCart' v-on:click='toggleShowCart'>
+            <button v-if='enableCart || showLesson === false' v-on:click='toggleShowCart'>
                 {{totalItemsCart}}
                 <span class= "fas fa-cart-plus"></span> Checkout
             </button>
@@ -93,6 +93,18 @@
                 </div><!-- end of row-->
                 <hr />
             </div><!-- end of v-for-->
+            <div>
+                <h1>Checkout</h1>
+                <form name="checkoutForm">
+                    <label for="name">Name:</label>
+                    <input type="text" id="userName" name="userName" value="" v-on:keyup="enableCheckButton()"><br>
+                    <label for="number">Phone Number:</label>
+                    <input type="text" id="userNumber" name="userNumber" value="" v-on:keyup="enableCheckButton()"><br>                    
+                </form>
+                <button v-if='enableCheckoutButton' v-on:click="submitCheckout()">Checkout</button>
+                <button disabled v-else>Checkout</button>
+                <p id="checkFeedback"></p>
+            </div>
         </div>
     </div>
 <script type="text/javascript" src="./lessons.js"></script>
