@@ -6,7 +6,8 @@ var webstore = new Vue({
         showLesson: true,
         lesson: lessons,
         cart: [],
-        sortedLesson: []
+        sortedLesson: [...lessons],
+        sortOrder: 0
     },
     methods: {
         add: function (selectedLesson) {
@@ -40,24 +41,103 @@ var webstore = new Vue({
             return selectedLesson.space > 0;
         },
         myFunction() {
-            document.getElementById("myDropdown").classList.toggle("show");
-          }
+            let a = (document.getElementById("SortOrder").value);
+            let b = (document.getElementById("SortType").value);
+            this.sortOrder = a * b;
+            console.log("workin till here");
+            this.sortLesson();
+           
+          },
+          sortLesson(){   
+            console.log("workin till here");
+            console.log(this.sortOrder)
+            switch (this.sortOrder) {
+                case 5:
+                    function subAsc(a, b) {
+                        if (a.subject.toLowerCase() > b.subject.toLowerCase()) return 1;
+                        if (a.subject.toLowerCase() < b.subject.toLowerCase()) return -1;
+                        return 0;
+                    }
+                    this.sortedLesson.sort(subAsc);
+                    break;
+                    
+                case 6:
+                    function subDes(a, b) {
+                        if (a.subject.toLowerCase() > b.subject.toLowerCase()) return -1;
+                        if (a.subject.toLowerCase() < b.subject.toLowerCase()) return 1;
+                        return 0;
+                    }
+                    this.sortedLesson.sort(subDes);
+                    break;
+                    
+                case 10:
+                    function locAsc(a, b) {
+                        if (a.location.toLowerCase() > b.location.toLowerCase()) return 1;
+                        if (a.location.toLowerCase() < b.location.toLowerCase()) return -1;
+                        return 0;
+                    }
+                    this.sortedLesson.sort(locAsc);
+                    console.log("here")
+                    break;
+                    
+                case 12:
+                    function locDes(a, b) {
+                        if (a.location.toLowerCase() > b.location.toLowerCase()) return -1;
+                        if (a.location.toLowerCase() < b.location.toLowerCase()) return 1;
+                        return 0;
+                    }
+                    this.sortedLesson.sort(locDes);
+                    break;
+                    
+                case 15:                   
+                    function priAsc(a, b) {
+                        if (a.price > b.price) return 1;
+                        if (a.price < b.price) return -1;
+                        console.log("price asc");
+                        return 0;
+                    }
+                    this.sortedLesson.sort(priAsc);
+                    console.log("workin till here!!!");
+                    break;
+                    
+                case 18:
+                    function priDes(a, b) {
+                        if (a.price > b.price) return -1;
+                        if (a.price < b.price) return 1;
+                        return 0;
+                    }
+                    this.sortedLesson.sort(priDes);
+                    break;
+                    
+                case 20:
+                    function spaAsc(a, b) {
+                        if (a.space > b.space) return 1;
+                        if (a.space < b.space) return -1;
+                        return 0;
+                    }
+                    this.sortedLesson.sort(spaAsc);
+                    break;
+                    
+                case 24:
+                    function spaDes(a, b) {
+                        if (a.space > b.space) return -1;
+                        if (a.space < b.space) return 1;
+                        return 0;
+                    }
+                    this.sortedLesson.sort(spaDes);  
+                    break;                    
+            }
+           
+        }
+          
         
     },
     computed: {
         totalItemsCart: function () {
             return this.cart.length || "";
-        },
-
-        sortLesson(){
-            sortedLesson = lessons;
-            function compare(a, b){
-                if (a.space > b.space) return 1;
-                if (a.space < b.space) return -1;
-                return 0;
-            }
-            return sortedLesson.sort(compare);
         }
+        
+        
     }
 });
 

@@ -28,7 +28,19 @@
                 {{totalItemsCart}}
                 <span class= "fas fa-cart-plus"></span> Checkout
             </button>
-            
+            <label>Sorting Option:</label>
+            <select name="SortType" id="SortType" v-on:change="myFunction()">
+                <option>Sort By</option>
+                <option value="1">Subject</option>
+                <option value="2">Location</option>
+                <option value="3">Price</option>
+                <option value="4">Availability</option>
+            </select>
+            <select name="SortOrder" id="SortOrder" v-on:change="myFunction()">
+                <option value="5">Ascending</option>
+                <option value="6">Descending</option>
+                
+            </select>
               
         </header>
         <div v-if="showLesson">
@@ -61,7 +73,7 @@
         </div>
         <div v-else>
             <h1>Welcome to Cart</h1>
-            <div v-for="lesson in sortLesson">
+            <div v-for="lesson in sortedLesson">
                 <div class="row">
                     <div >
                         <figure>

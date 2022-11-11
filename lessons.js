@@ -3,7 +3,7 @@ var lessons = [
         id: 1001,
         subject: "Math",
         location: "London",
-        price: 2000,
+        price: 1000,
         space: 5,
         image: "./Images/math.png",
         rating: 3
@@ -21,7 +21,7 @@ var lessons = [
         id: 1003,
         subject: "Science",
         location: "Watford",
-        price: 2000,
+        price: 2050,
         space: 5,
         image: "./Images/math.png",
         rating: 3
@@ -30,7 +30,7 @@ var lessons = [
         id: 1004,
         subject: "Math",
         location: "London",
-        price: 2000,
+        price: 400,
         space: 5,
         image: "./Images/math.png",
         rating: 3
@@ -39,7 +39,7 @@ var lessons = [
         id: 1005,
         subject: "English",
         location: "Borehamwood",
-        price: 2000,
+        price: 900,
         space: 5,
         image: "./Images/math.png",
         rating: 3
@@ -48,7 +48,7 @@ var lessons = [
         id: 1006,
         subject: "Science",
         location: "Watford",
-        price: 2000,
+        price: 6000,
         space: 5,
         image: "./Images/math.png",
         rating: 3
@@ -57,7 +57,7 @@ var lessons = [
         id: 1007,
         subject: "Math",
         location: "London",
-        price: 2000,
+        price: 150,
         space: 5,
         image: "./Images/math.png",
         rating: 3
@@ -66,7 +66,7 @@ var lessons = [
         id: 1008,
         subject: "English",
         location: "Borehamwood",
-        price: 2000,
+        price: 350,
         space: 5,
         image: "./Images/math.png",
         rating: 3
@@ -75,7 +75,7 @@ var lessons = [
         id: 1009,
         subject: "Science",
         location: "Watford",
-        price: 2000,
+        price: 5000,
         space: 5,
         image: "./Images/math.png",
         rating: 3
@@ -84,7 +84,7 @@ var lessons = [
         id: 1010,
         subject: "Science",
         location: "Watford",
-        price: 2000,
+        price: 7000,
         space: 5,
         image: "./Images/math.png",
         rating: 3
