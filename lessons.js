@@ -13,7 +13,7 @@ var lessons = [
         subject: "English",
         location: "Borehamwood",
         price: 2000,
-        space: 1,
+        space: 5,
         image: "./Images/math.png",
         rating: 3
     },
