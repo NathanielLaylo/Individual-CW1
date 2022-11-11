@@ -45,8 +45,8 @@ var webstore = new Vue({
             this.sortOrder = a * b;
             this.sortLesson();
            
-          },
-          sortLesson(){   
+        },
+        sortLesson(){   
             switch (this.sortOrder) {
                 case 5:
                     function subAsc(a, b) {
@@ -136,6 +136,9 @@ var webstore = new Vue({
     computed: {
         totalItemsCart: function () {
             return this.cart.length || "";
+        },
+        enableCart(){
+            return this.cart.length > 0;
         }
         
         

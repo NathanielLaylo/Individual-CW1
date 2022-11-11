@@ -24,8 +24,11 @@
     <div id="app">
         <header>
             <h1 v-text="sitename"></h1>
-            <button v-on:click='toggleShowCart'>
+            <button v-if='enableCart' v-on:click='toggleShowCart'>
                 {{totalItemsCart}}
+                <span class= "fas fa-cart-plus"></span> Checkout
+            </button>
+            <button disabled v-else>
                 <span class= "fas fa-cart-plus"></span> Checkout
             </button>
             <label>Sorting Option:</label>
