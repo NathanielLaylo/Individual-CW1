@@ -41,12 +41,42 @@
             </select>
             <select name="SortOrder" id="SortOrder" v-on:change="myFunction()">
                 <option value="5">Ascending</option>
-                <option value="6">Descending</option>
-                
+                <option value="6">Descending</option>               
             </select>
+
+            <input type="text" id="searchInput" v-on:keyup="searchOnType()">
+
               
         </header>
-        <div v-if="showLesson">
+        <div v-if="showLesson && showSearch">
+            <main>                             
+                <div v-for="lesson in search">
+                    <div class="row">
+                        <div>
+                            <figure>
+                                <img v-bind:src="lesson.image">
+                            </figure>
+                        </div>
+                        <div>
+                            <p>Subject: {{lesson.subject}}</p>
+                            <p>Location: {{lesson.location}}</p>
+                            <p>Price: {{lesson.price}}</p>
+                            <p>Space: {{lesson.space}}</p>
+                            <button v-on:click="add(lesson)" v-if="canAddtoCart(lesson)"> Add To Cart</button>
+                            <button disabled v-else> Add To Cart </button>
+                            <div>
+                                <span class="fa fa-star" v-for='n in lesson.rating'></span>
+                                <span class="fa fa-star-o" v-for='n in 5 - lesson.rating'></span>
+                            </div>
+
+    
+                        </div>
+                    </div><!-- end of row-->
+                    <hr />
+                </div><!-- end of v-for-->
+            </main>
+        </div>
+        <div v-else-if="showLesson">
             <main>                             
                 <div v-for="lesson in lesson">
                     <div class="row">
