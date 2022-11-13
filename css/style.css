@@ -1,4 +1,40 @@
 img {
-    width: 100px; 
+    width: 100px;
     height: 100px;
+}
+
+.lesson {
+    border-style: solid;
+    width: 250px;
+    height: 275px;
+    border-radius: 20px;
+    margin-left: 20px;
+    margin-top: 20px;
+    float: left;
+}
+
+.lesson p {
+    margin: 0%;
+    padding-left: 15px;
+    font-size: 17px;
+}
+
+.lesson button {
+    margin-left: 130px;
+    font-size: 15px;
+    background-color: #0a4994;
+    border-color: #0a4994;
+    color: white;
+}
+.lesson button:disabled {
+    background-color: #5093e4;
+    border-color: #5093e4;
+}
+
+.smallimage {
+    margin-left: 35px;
+}
+
+.rating{
+    margin-left: 17px;
 }

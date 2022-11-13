@@ -7,17 +7,11 @@
     <title>iLearn Academy</title>
     <script src="https://unpkg.com/vue@2.7.8/dist/vue.js"></script>   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
     <script src="https://use.fontawesome.com/86e0cb0b96.js"></script>
 
 
 
-    <style>
-        img {
-            width: 100px; 
-            height: 100px;
-        }
-
-    </style>
 </head>
 
 <body>
@@ -51,77 +45,58 @@
         <div v-if="showLesson && showSearch">
             <main>                             
                 <div v-for="lesson in search">
-                    <div class="row">
-                        <div>
-                            <figure>
-                                <img v-bind:src="lesson.image">
-                            </figure>
-                        </div>
-                        <div>
+                    <div class="lesson">
+                        <figure>
+                            <img v-bind:src="lesson.image">
+                        </figure>
                             <p>Subject: {{lesson.subject}}</p>
                             <p>Location: {{lesson.location}}</p>
                             <p>Price: {{lesson.price}}</p>
                             <p>Space: {{lesson.space}}</p>
                             <button v-on:click="add(lesson)" v-if="canAddtoCart(lesson)"> Add To Cart</button>
                             <button disabled v-else> Add To Cart </button>
-                            <div>
+                            <div class="rating">
                                 <span class="fa fa-star" v-for='n in lesson.rating'></span>
                                 <span class="fa fa-star-o" v-for='n in 5 - lesson.rating'></span>
                             </div>
-
-    
-                        </div>
                     </div><!-- end of row-->
-                    <hr />
                 </div><!-- end of v-for-->
             </main>
         </div>
         <div v-else-if="showLesson">
             <main>                             
                 <div v-for="lesson in lesson">
-                    <div class="row">
-                        <div>
-                            <figure>
-                                <img v-bind:src="lesson.image">
-                            </figure>
-                        </div>
-                        <div>
+                    <div class="lesson">
+                        <figure>
+                            <img v-bind:src="lesson.image">
+                        </figure>
                             <p>Subject: {{lesson.subject}}</p>
                             <p>Location: {{lesson.location}}</p>
                             <p>Price: {{lesson.price}}</p>
                             <p>Space: {{lesson.space}}</p>
                             <button v-on:click="add(lesson)" v-if="canAddtoCart(lesson)"> Add To Cart</button>
                             <button disabled v-else> Add To Cart </button>
-                            <div>
+                            <div class="rating">
                                 <span class="fa fa-star" v-for='n in lesson.rating'></span>
                                 <span class="fa fa-star-o" v-for='n in 5 - lesson.rating'></span>
                             </div>
-
-    
-                        </div>
                     </div><!-- end of row-->
-                    <hr />
                 </div><!-- end of v-for-->
             </main>
         </div>
         <div v-else>
             <h1>Welcome to Cart</h1>
             <div v-for="lesson in cart">
-                <div class="row">
-                    <div >
-                        <figure>
-                            <img v-bind:src="lesson.image">
-                        </figure>
-                    </div>
-                    <div >
+                <div class="lesson">
+                    <figure>
+                        <img v-bind:src="lesson.image">
+                    </figure>
                         <p>Subject: {{lesson.subject}}</p>
                         <p>Location: {{lesson.location}}</p>
                         <p>Price: {{lesson.price}}</p>
                         <p>Space: {{lesson.space}}</p>
                         <button v-on:click="remove(lesson)"> Remove From Cart</button>
-                    </div>
                 </div><!-- end of row-->
-                <hr />
             </div><!-- end of v-for-->
             <div>
                 <h1>Checkout</h1>
