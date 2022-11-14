@@ -84,7 +84,7 @@
                 </div><!-- end of v-for-->
             </main>
         </div>
-        <div v-else>
+        <div v-else class="cartContainer">
             <h1>Welcome to Cart</h1>
             <div v-for="lesson in cart">
                 <div class="lesson">
@@ -98,7 +98,7 @@
                         <button v-on:click="remove(lesson)"> Remove From Cart</button>
                 </div><!-- end of row-->
             </div><!-- end of v-for-->
-            <div>
+            <div class="checkout">
                 <h1>Checkout</h1>
                 <form name="checkoutForm">
                     <label for="name">Name:</label>
