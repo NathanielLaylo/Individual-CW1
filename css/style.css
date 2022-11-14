@@ -39,7 +39,6 @@ img {
     margin-left: 17px;
 }
 
-.cartContainer{
-    display: flex;
-    flex-direction: column;
+.checkout{
+    float: none;
 }
