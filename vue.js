@@ -42,7 +42,7 @@ var webstore = new Vue({
         canAddtoCart(selectedLesson) {
             return selectedLesson.space > 0;
         },
-        myFunction() {
+        sorter() {
             let a = (document.getElementById("SortOrder").value);
             let b = (document.getElementById("SortType").value);
             this.sortOrder = a * b;
@@ -168,10 +168,16 @@ var webstore = new Vue({
                 }
             });
         },
-
+        stringLength(str){
+            let strLength = 0;
+            while(str[strLength] !== undefined){
+                strLength++;
+            }
+            return strLength;
+        },
         searchOnTypeV2(){
             this.searchInput = document.getElementById('searchInput').value.toLowerCase();
-            let inputLength = this.searchInput.length;
+            let inputLength = this.stringLength(this.searchInput);
             let subCounter = 0;
             let stopper = false;
             let locCounter = 0;
@@ -179,8 +185,9 @@ var webstore = new Vue({
             let i = 0;
             this.lesson.forEach(element => { 
                 i = 0;
+                let subjectLength = this.stringLength(element.subject);
                 stopper = false;                               
-                while(( i + inputLength) <=  element.subject.length){
+                while(( i + inputLength) <=  subjectLength){
                     for(let x = 0; x < inputLength; x++){
                         if(element.subject[i+x].toLowerCase() == this.searchInput[x]){                           
                             subCounter++; 
@@ -201,7 +208,8 @@ var webstore = new Vue({
                 }
                 if(!stopper){
                     i = 0;
-                    while(( i + inputLength) <=  element.location.length){
+                    let locationLength = this.stringLength(element.location);
+                    while(( i + inputLength) <=  locationLength){
                         for(let x = 0; x < inputLength; x++){
                             if(element.location[i+x].toLowerCase() == this.searchInput[x]){                           
                                 locCounter++; 
