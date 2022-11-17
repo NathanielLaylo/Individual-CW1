@@ -155,19 +155,6 @@ var webstore = new Vue({
             alert("Thank you, " + userName + "! Your order has been submitted.");
             this.searchOnType();
         },
-        searchOnType() {
-            this.searchInput = document.getElementById('searchInput').value;
-            this.search = [];
-            this.lesson.forEach(element => {
-
-                if (element.subject.toLowerCase().indexOf(this.searchInput.toLowerCase()) > -1) {
-                    this.search.push(element);
-                    console.log(element.subject);
-                } else if (element.location.toLowerCase().indexOf(this.searchInput.toLowerCase()) > -1) {
-                    this.search.push(element);
-                }
-            });
-        },
         stringLength(str){
             let strLength = 0;
             while(str[strLength] !== undefined){
@@ -175,7 +162,7 @@ var webstore = new Vue({
             }
             return strLength;
         },
-        searchOnTypeV2(){
+        searchOnType(){
             this.searchInput = document.getElementById('searchInput').value.toLowerCase();
             let inputLength = this.stringLength(this.searchInput);
             let subCounter = 0;
@@ -228,14 +215,9 @@ var webstore = new Vue({
                             break;               
                         }                
                     }
-                }
-                
-                
+                }                               
             });
-
         }
-        //kuhanin gano haba input
-        //pagkumparahin sa ganon kahab sa subject or location
         
     },
     computed: {

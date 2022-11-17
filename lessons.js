@@ -5,7 +5,7 @@ var lessons = [
         location: "London",
         price: 1000,
         space: 5,
-        image: "./Images/chess.png",
+        image: "./images/chess.png",
         rating: 3
     },
     {
@@ -14,7 +14,7 @@ var lessons = [
         location: "Borehamwood",
         price: 2000,
         space: 5,
-        image: "./Images/dance.png",
+        image: "./images/dance.png",
         rating: 3
     },
     {
@@ -23,7 +23,7 @@ var lessons = [
         location: "Watford",
         price: 2050,
         space: 5,
-        image: "./Images/science.png",
+        image: "./images/science.png",
         rating: 3
     },
     {
@@ -32,7 +32,7 @@ var lessons = [
         location: "London",
         price: 400,
         space: 5,
-        image: "./Images/javascript.png",
+        image: "./images/javascript.png",
         rating: 3
     },
     {
@@ -41,7 +41,7 @@ var lessons = [
         location: "Borehamwood",
         price: 900,
         space: 5,
-        image: "./Images/table-tennis.png",
+        image: "./images/table-tennis.png",
         rating: 3
     },
     {
@@ -50,7 +50,7 @@ var lessons = [
         location: "Watford",
         price: 6000,
         space: 5,
-        image: "./Images/science.png",
+        image: "./images/science.png",
         rating: 3
     },
     {
@@ -59,7 +59,7 @@ var lessons = [
         location: "London",
         price: 150,
         space: 5,
-        image: "./Images/language.png",
+        image: "./images/language.png",
         rating: 3
     },
     {
@@ -68,7 +68,7 @@ var lessons = [
         location: "Borehamwood",
         price: 350,
         space: 5,
-        image: "./Images/language.png",
+        image: "./images/language.png",
         rating: 3
     },
     {
@@ -77,7 +77,7 @@ var lessons = [
         location: "Watford",
         price: 5000,
         space: 5,
-        image: "./Images/language.png",
+        image: "./images/language.png",
         rating: 3
     },
     {
@@ -86,7 +86,7 @@ var lessons = [
         location: "Watford",
         price: 7000,
         space: 5,
-        image: "./Images/math.png",
+        image: "./images/math.png",
         rating: 3
     }
 ];

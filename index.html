@@ -38,11 +38,11 @@
                 <option value="6">Descending</option>               
             </select>
 
-            <input type="text" id="searchInput" v-on:keyup="searchOnTypeV2()">
+            <input type="text" id="searchInput" v-on:keyup="searchOnType()">
 
               
         </header>
-        <div v-if="showLesson && showSearch">
+        <div v-if="showSearch">
             <main>                             
                 <div v-for="lesson in search">
                     <div class="lesson">
