@@ -41,4 +41,5 @@ img {
 
 .checkout{
     float: none;
+    clear: both;
 }

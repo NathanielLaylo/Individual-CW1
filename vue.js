@@ -243,6 +243,9 @@ var webstore = new Vue({
             return this.cart.length || "";
         },
         enableCart() {
+            if(this.cart.length == 0){
+                this.showLesson = true;
+            }
             return this.cart.length > 0;
         },
         showSearch() {
