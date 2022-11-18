@@ -16,8 +16,8 @@
 
 <body>
     <div id="app">
-        <header>
-            <h1 v-text="sitename"></h1>
+        <header class="header">
+            <h1 v-text="sitename" class="heading"></h1>
             <button v-if='enableCart || showLesson === false' v-on:click='toggleShowCart'>
                 {{totalItemsCart}}
                 <span class= "fas fa-cart-plus"></span> Checkout
@@ -37,12 +37,12 @@
                 <option value="5">Ascending</option>
                 <option value="6">Descending</option>               
             </select>
-
+            <label>Search:</label>
             <input type="text" id="searchInput" v-on:keyup="searchOnType()">
 
               
         </header>
-        <div v-if="showSearch">
+        <div v-if="showLesson && showSearch">
             <main>                             
                 <div v-for="lesson in search">
                     <div class="lesson">
@@ -85,7 +85,7 @@
             </main>
         </div>
         <div v-else>
-            <h1>Welcome to Cart</h1>
+            <h1 class="heading">Welcome to Cart</h1>
             <div v-for="lesson in cart">
                 <div class="lesson">
                     <figure>
@@ -100,7 +100,7 @@
             </div><!-- end of v-for-->
             <div class="checkout">
                 <h1>Checkout</h1>
-                <form name="checkoutForm">
+                <form name="checkoutForm" class="form">
                     <label for="name">Name:</label>
                     <input type="text" id="userName" name="userName" value="" v-on:keyup="enableCheckButton()"><br>
                     <label for="number">Phone Number:</label>

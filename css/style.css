@@ -21,6 +21,7 @@ img {
 
 .lesson button {
     margin-left: 130px;
+    margin-right: 20px;
     font-size: 15px;
     background-color: #0a4994;
     border-color: #0a4994;
@@ -42,4 +43,39 @@ img {
 .checkout{
     float: none;
     clear: both;
+    margin-left: 25px;
+    padding-top: 50px;
+}
+
+.header button{
+    margin-right: 20px;
+    margin-left: 25px;
+}
+
+.header label{
+    margin-left: 40px;
+    font-weight: bolder;
+}
+
+.heading{
+    margin-left: 25px;
+}
+
+.form label{
+    font-weight: bolder;
+}
+
+.checkout button{
+    margin-top: 15px;
+    margin-left: 100px;
+    font-weight: bolder;
+    font-size: 15px;
+    background-color: #0a4994;
+    border-color: #0a4994;
+    color: white;
+}
+
+.checkout button:disabled {
+    background-color: #5093e4;
+    border-color: #5093e4;
 }
