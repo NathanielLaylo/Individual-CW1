@@ -232,6 +232,13 @@ var webstore = new Vue({
         },
         showSearch() {
             return this.searchInput.length > 0;
+        },
+        showTotal: function(){
+            let total = 0;
+            this.cart.forEach(element => { 
+                total+= element.price;
+            });
+            return total;
         }
     }
 });

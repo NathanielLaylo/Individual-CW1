@@ -100,6 +100,7 @@
             </div><!-- end of v-for-->
             <div class="checkout">
                 <h1>Checkout</h1>
+                <h2>Total Amount: {{showTotal}}</h2>
                 <form name="checkoutForm" class="form">
                     <label for="name">Name:</label>
                     <input type="text" id="userName" name="userName" value="" v-on:keyup="enableCheckButton()"><br>
