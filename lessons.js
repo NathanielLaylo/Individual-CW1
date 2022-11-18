@@ -6,7 +6,7 @@ var lessons = [
         price: 1000,
         space: 5,
         image: "./images/chess.png",
-        rating: 3
+        rating: 5
     },
     {
         id: 1002,
@@ -24,7 +24,7 @@ var lessons = [
         price: 2050,
         space: 5,
         image: "./images/science.png",
-        rating: 3
+        rating: 2
     },
     {
         id: 1004,
@@ -33,7 +33,7 @@ var lessons = [
         price: 400,
         space: 5,
         image: "./images/javascript.png",
-        rating: 3
+        rating: 4
     },
     {
         id: 1005,
@@ -42,7 +42,7 @@ var lessons = [
         price: 900,
         space: 5,
         image: "./images/table-tennis.png",
-        rating: 3
+        rating: 5
     },
     {
         id: 1006,
@@ -51,7 +51,7 @@ var lessons = [
         price: 6000,
         space: 5,
         image: "./images/science.png",
-        rating: 3
+        rating: 2
     },
     {
         id: 1007,
@@ -60,7 +60,7 @@ var lessons = [
         price: 150,
         space: 5,
         image: "./images/language.png",
-        rating: 3
+        rating: 5
     },
     {
         id: 1008,
@@ -69,7 +69,7 @@ var lessons = [
         price: 350,
         space: 5,
         image: "./images/language.png",
-        rating: 3
+        rating: 1
     },
     {
         id: 1009,
@@ -78,7 +78,7 @@ var lessons = [
         price: 5000,
         space: 5,
         image: "./images/language.png",
-        rating: 3
+        rating: 4
     },
     {
         id: 1010,
